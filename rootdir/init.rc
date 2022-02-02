@@ -29,14 +29,6 @@ on early-init
 
     mkdir /acct/uid
 
-    # memory.pressure_level used by lmkd
-    chown root system /dev/memcg/memory.pressure_level
-    chmod 0040 /dev/memcg/memory.pressure_level
-    # app mem cgroups, used by activity manager, lmkd and zygote
-    mkdir /dev/memcg/apps/ 0755 system system
-    # cgroup for system_server and surfaceflinger
-    mkdir /dev/memcg/system 0550 system system
-
     # symlink the Android specific /dev/tun to Linux expected /dev/net/tun
     mkdir /dev/net 0755 root root
     symlink ../tun /dev/net/tun
