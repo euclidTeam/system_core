@@ -204,9 +204,6 @@ void removeAllProcessGroups() {
     if (CgroupGetControllerPath(CGROUPV2_CONTROLLER_NAME, &path)) {
         cgroups.push_back(path);
     }
-    if (CgroupGetControllerPath("memory", &path)) {
-        cgroups.push_back(path + "/apps");
-    }
 
     for (std::string cgroup_root_path : cgroups) {
         std::unique_ptr<DIR, decltype(&closedir)> root(opendir(cgroup_root_path.c_str()), closedir);
@@ -408,16 +405,7 @@ static int KillProcessGroup(uid_t uid, int initialPid, int signal, int retries,
                       << " in " << static_cast<int>(ms) << "ms";
         }
 
-        int err = RemoveProcessGroup(cgroup, uid, initialPid, retries);
-
-        if (isMemoryCgroupSupported() && UsePerAppMemcg()) {
-            std::string memory_path;
-            CgroupGetControllerPath("memory", &memory_path);
-            memory_path += "/apps";
-            if (RemoveProcessGroup(memory_path.c_str(), uid, initialPid, retries)) return -1;
-        }
-
-        return err;
+        return RemoveProcessGroup(cgroup, uid, initialPid, retries);
     } else {
         if (retries > 0) {
             LOG(ERROR) << "Failed to kill process cgroup uid " << uid << " pid " << initialPid
