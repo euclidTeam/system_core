@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d227cf7_e1793be2",
+        "filename": "libprocessgroup/processgroup.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1157738
+      },
+      "writtenOn": "2022-02-04T01:48:31Z",
+      "side": 0,
+      "message": "A vendor who wants to keep using memcg v1 could override cgroups.json from a vendor partition. This change would preclude them from doing that.\n\nIt would be nice to do this cleanup but I\u0027m not sure if we can.",
+      "range": {
+        "startLine": 207,
+        "startChar": 4,
+        "endLine": 209,
+        "endChar": 5
+      },
+      "revId": "075f8d4e5ec200b4e020ab0e4b87c412d80f486d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
