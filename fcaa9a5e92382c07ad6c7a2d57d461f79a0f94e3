@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d68e46c_f54b3505",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1869780
+      },
+      "writtenOn": "2022-02-07T23:18:07Z",
+      "side": 1,
+      "message": "Voted -2 on this patch since I learned earlier today that there is no agreement about this change. Please continue with reviewing the other patches in this patch series since I\u0027d like to submit these.",
+      "revId": "fcaa9a5e92382c07ad6c7a2d57d461f79a0f94e3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
