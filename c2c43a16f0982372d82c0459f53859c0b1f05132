@@ -16,6 +16,24 @@
       "message": "What build is failing this? This is part of a topic and it requires another cl from system/unwinding. Once that gets in, the build should fix itself.",
       "revId": "c2c43a16f0982372d82c0459f53859c0b1f05132",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "082c639a_b7ee111b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1869780
+      },
+      "writtenOn": "2022-02-17T19:42:33Z",
+      "side": 1,
+      "message": "This is the build command I ran:\n\nsource build/envsetup.sh \u0026\u0026 lunch aosp_cf_x86_64_phone-userdebug \u0026\u0026\n  mm $(cd system/core \u0026\u0026 android-build-targets)\n\nThe contents of the android-build-targets script is as follows:\n\n#!/bin/bash                                                                                                                                                                                                                                                                    \n\nfind -name Android.bp |\n    while read -r f; do\n        sed -n \u0027/^\\(cc_test \\|cc_test_host \\|cc_binary\\|cc_library\\)/,/^}/s/^[[:blank:]]*name:[[:blank:]]*\"\\([^\"]*\\)\",[[:blank:]]*$/\\1/p\u0027 \"$f\"\n    done",
+      "parentUuid": "4995684f_84cba9d8",
+      "revId": "c2c43a16f0982372d82c0459f53859c0b1f05132",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
