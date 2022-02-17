@@ -454,7 +454,7 @@ static void dump_thread(Tombstone* tombstone, unwindstack::Unwinder* unwinder,
     }
 
     std::unique_ptr<unwindstack::Regs> initial_regs;
-    thread_unwinder.UnwindWithSignal(BIONIC_SIGNAL_BACKTRACE, thread_info.tid, &initial_regs);
+    thread_unwinder.UnwindWithSignal(BIONIC_SIGNAL_BACKTRACE, thread_info.tid);
     dump_registers(&thread_unwinder, initial_regs, thread, memory_dump);
     dump_thread_backtrace(&thread_unwinder, thread);
   } else {
