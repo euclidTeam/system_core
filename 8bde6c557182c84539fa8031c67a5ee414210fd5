@@ -52,6 +52,24 @@
       "parentUuid": "a8af3afd_254a20ca",
       "revId": "8bde6c557182c84539fa8031c67a5ee414210fd5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "79739b29_3d53f8cc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1121838
+      },
+      "writtenOn": "2022-03-02T19:26:01Z",
+      "side": 1,
+      "message": "Thanks for the links Elliot. I\u0027ll stop spreading the plague of std::bind 😄",
+      "parentUuid": "36a30deb_79a8cf80",
+      "revId": "8bde6c557182c84539fa8031c67a5ee414210fd5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
