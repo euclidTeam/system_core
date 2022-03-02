@@ -34,6 +34,24 @@
       "parentUuid": "781e349e_bf192947",
       "revId": "8bde6c557182c84539fa8031c67a5ee414210fd5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36a30deb_79a8cf80",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2022-03-02T18:44:02Z",
+      "side": 1,
+      "message": "even if it\u0027s not made the style guide, i think it\u0027s quite clear that the general advice is \"strongly prefer lambdas\". see both\n\nhttps://g3doc.corp.google.com/devtools/library_club/g3doc/totw/78.md?cl\u003dhead\n\nand (the even more strongly worded)\n\nhttps://g3doc.corp.google.com/devtools/library_club/g3doc/totw/108.md?cl\u003dhead for example.\n\n(i suspect the only reason this isn\u0027t in the style guide is that it\u0027s quite rare to meet someone who prefers std::bind to a lambda; i don\u0027t remember the last time i saw someone add a _new_ std::bind call, but i see lambdas all the time :-) )",
+      "parentUuid": "a8af3afd_254a20ca",
+      "revId": "8bde6c557182c84539fa8031c67a5ee414210fd5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
