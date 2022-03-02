@@ -16,6 +16,24 @@
       "message": "Is it more preferable to use lambdas than to std::bind? The style guide doesn\u0027t seem to mention anything about it.\n\nThe change itself LGTM. I just personally like std::bind more than lambdas.",
       "revId": "8bde6c557182c84539fa8031c67a5ee414210fd5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8af3afd_254a20ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1869780
+      },
+      "writtenOn": "2022-03-02T17:21:06Z",
+      "side": 1,
+      "message": "This is something I don\u0027t have a strong opinion about. I will drop this patch unless if requested otherwise.",
+      "parentUuid": "781e349e_bf192947",
+      "revId": "8bde6c557182c84539fa8031c67a5ee414210fd5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
