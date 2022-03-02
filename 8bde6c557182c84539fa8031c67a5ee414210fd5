@@ -70,6 +70,24 @@
       "parentUuid": "36a30deb_79a8cf80",
       "revId": "8bde6c557182c84539fa8031c67a5ee414210fd5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71cb84f6_6a8456a6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1121838
+      },
+      "writtenOn": "2022-03-02T19:40:06Z",
+      "side": 1,
+      "message": "Oh I didn\u0027t introduce this particular instance of std::bind:\n\nhttps://android.googlesource.com/platform/system/core/+/92c260159a6b69f0317d7b66dd11a52772494e48\n\nBut I did use std::bind in many other places.",
+      "parentUuid": "79739b29_3d53f8cc",
+      "revId": "8bde6c557182c84539fa8031c67a5ee414210fd5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
