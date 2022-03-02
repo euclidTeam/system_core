@@ -88,6 +88,24 @@
       "parentUuid": "79739b29_3d53f8cc",
       "revId": "8bde6c557182c84539fa8031c67a5ee414210fd5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b403f2bf_a4a6e728",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2022-03-02T22:21:03Z",
+      "side": 1,
+      "message": "i don\u0027t think std::bind is bad enough that anyone cares enough to actively go and remove std::bind uses :-) i think it\u0027s just a \"if you\u0027re writing new code/rewriting existing code anyway\" kind of thing, which this seems to be.",
+      "parentUuid": "71cb84f6_6a8456a6",
+      "revId": "8bde6c557182c84539fa8031c67a5ee414210fd5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
