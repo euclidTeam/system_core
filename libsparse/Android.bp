@@ -78,7 +78,7 @@ cc_binary_host {
     static_executable: true,
 }
 
-cc_binary {
+cc_binary_host {
     name: "img2simg",
     srcs: ["img2simg.cpp"],
     static_libs: [
