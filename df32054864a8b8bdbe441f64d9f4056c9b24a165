@@ -16,6 +16,24 @@
       "message": "Hi Bart, does this work for you without also removing `cgroup_disable\u003dmemory` from the bootargs?",
       "revId": "df32054864a8b8bdbe441f64d9f4056c9b24a165",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a292c64_c315a128",
+        "filename": "libprocessgroup/profiles/cgroups.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1157738
+      },
+      "writtenOn": "2022-04-01T17:26:20Z",
+      "side": 1,
+      "message": "It shouldn\u0027t. Kernel memcg support has to be enabled for this to work.",
+      "parentUuid": "40db55e3_3b94b5b6",
+      "revId": "df32054864a8b8bdbe441f64d9f4056c9b24a165",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
