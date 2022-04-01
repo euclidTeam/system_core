@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40db55e3_3b94b5b6",
+        "filename": "libprocessgroup/profiles/cgroups.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1930620
+      },
+      "writtenOn": "2022-04-01T17:24:27Z",
+      "side": 1,
+      "message": "Hi Bart, does this work for you without also removing `cgroup_disable\u003dmemory` from the bootargs?",
+      "revId": "df32054864a8b8bdbe441f64d9f4056c9b24a165",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
