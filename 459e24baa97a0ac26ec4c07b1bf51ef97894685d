@@ -16,6 +16,23 @@
       "message": "See comments in the previous patch which adds callback support.",
       "revId": "459e24baa97a0ac26ec4c07b1bf51ef97894685d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "acbfd91b_4c66a3a2",
+        "filename": "libprocessgroup/processgroup_test.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1930620
+      },
+      "writtenOn": "2022-08-10T20:39:24Z",
+      "side": 1,
+      "message": "Why are you using a pointer here instead of the reference from GetInstance()?",
+      "revId": "459e24baa97a0ac26ec4c07b1bf51ef97894685d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
