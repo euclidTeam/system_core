@@ -48,6 +48,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea678bb8_4ec20512",
+        "filename": "libprocessgroup/task_profiles.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 818,
+      "author": {
+        "id": 1869780
+      },
+      "writtenOn": "2022-08-10T20:55:36Z",
+      "side": 1,
+      "message": "I want to test both branches of the if-statement that I added in SetProcessProfiles().",
+      "parentUuid": "46479da3_ee86102c",
+      "range": {
+        "startLine": 816,
+        "startChar": 8,
+        "endLine": 818,
+        "endChar": 9
+      },
+      "revId": "6e2ed811864908cbbe39d6d664d8b7f7ef88ac92",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b22f1055_a210103a",
@@ -61,6 +85,24 @@
       "writtenOn": "2022-08-10T20:38:57Z",
       "side": 1,
       "message": "I think better to just copy the std::function from a `const \u0026` and check for empty with [operator bool](https://en.cppreference.com/w/cpp/utility/functional/function/operator_bool)",
+      "revId": "6e2ed811864908cbbe39d6d664d8b7f7ef88ac92",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f90648d_381b13fa",
+        "filename": "libprocessgroup/task_profiles.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1869780
+      },
+      "writtenOn": "2022-08-10T20:55:36Z",
+      "side": 1,
+      "message": "Copying std::function\u003c\u003e can be expensive (involves at least a vcall and may involve memory allocation) and hence something I prefer not to do.",
+      "parentUuid": "b22f1055_a210103a",
       "revId": "6e2ed811864908cbbe39d6d664d8b7f7ef88ac92",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
