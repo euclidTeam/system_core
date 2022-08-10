@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4237267a_51d1faf7",
+        "filename": "libprocessgroup/task_profiles.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 818,
+      "author": {
+        "id": 1157738
+      },
+      "writtenOn": "2022-08-10T06:23:50Z",
+      "side": 1,
+      "message": "Adding this callback support only for testing purposes seems like an overkill. Is there no other way to test this? Maybe we could mock the profiles and use the ExecuteForProcess() calls instead of these callbacks?",
+      "range": {
+        "startLine": 816,
+        "startChar": 8,
+        "endLine": 818,
+        "endChar": 9
+      },
+      "revId": "6e2ed811864908cbbe39d6d664d8b7f7ef88ac92",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
