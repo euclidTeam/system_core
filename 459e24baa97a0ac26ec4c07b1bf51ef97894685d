@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0517fac_5696ffe9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1157738
+      },
+      "writtenOn": "2022-08-10T06:24:37Z",
+      "side": 1,
+      "message": "See comments in the previous patch which adds callback support.",
+      "revId": "459e24baa97a0ac26ec4c07b1bf51ef97894685d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
