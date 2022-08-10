@@ -33,6 +33,24 @@
       "message": "Why are you using a pointer here instead of the reference from GetInstance()?",
       "revId": "459e24baa97a0ac26ec4c07b1bf51ef97894685d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2bb374b_053024b9",
+        "filename": "libprocessgroup/processgroup_test.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1869780
+      },
+      "writtenOn": "2022-08-10T20:43:04Z",
+      "side": 1,
+      "message": "To make it clear that this scope does not own the task profiles object (*tp).",
+      "parentUuid": "acbfd91b_4c66a3a2",
+      "revId": "459e24baa97a0ac26ec4c07b1bf51ef97894685d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
