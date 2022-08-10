@@ -22,6 +22,47 @@
       },
       "revId": "6e2ed811864908cbbe39d6d664d8b7f7ef88ac92",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46479da3_ee86102c",
+        "filename": "libprocessgroup/task_profiles.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 818,
+      "author": {
+        "id": 1930620
+      },
+      "writtenOn": "2022-08-10T20:38:57Z",
+      "side": 1,
+      "message": "I\u0027m also not sure what we gain from testing this. I think it\u0027s pretty easy to see from inspection that this function gets called for each element in profiles. But this is also true regardless of whether the profile name can be found or not. So the test is returning the count of the number of times SetProcessProfilesT does \"something\" or \"maybe nothing at all\" because the profile doesn\u0027t actually exist.",
+      "parentUuid": "4237267a_51d1faf7",
+      "range": {
+        "startLine": 816,
+        "startChar": 8,
+        "endLine": 818,
+        "endChar": 9
+      },
+      "revId": "6e2ed811864908cbbe39d6d664d8b7f7ef88ac92",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b22f1055_a210103a",
+        "filename": "libprocessgroup/task_profiles.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1930620
+      },
+      "writtenOn": "2022-08-10T20:38:57Z",
+      "side": 1,
+      "message": "I think better to just copy the std::function from a `const \u0026` and check for empty with [operator bool](https://en.cppreference.com/w/cpp/utility/functional/function/operator_bool)",
+      "revId": "6e2ed811864908cbbe39d6d664d8b7f7ef88ac92",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
