@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec198186_bfb23ed9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 29
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1869780
+      },
+      "writtenOn": "2022-10-06T17:52:17Z",
+      "side": 1,
+      "message": "The new patch is available here: https://android-review.googlesource.com/c/platform/system/core/+/2218645. It passes presubmit tests but triggers a performance regression complaint.",
+      "parentUuid": "3f159535_ee8e161f",
+      "revId": "df32054864a8b8bdbe441f64d9f4056c9b24a165",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "40db55e3_3b94b5b6",
