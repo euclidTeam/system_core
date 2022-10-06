@@ -54,6 +54,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd86881d_877d20c0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 29
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1869780
+      },
+      "writtenOn": "2022-10-06T20:42:44Z",
+      "side": 1,
+      "message": "I have restored this patch.",
+      "parentUuid": "5007c0d4_b7ed6832",
+      "revId": "df32054864a8b8bdbe441f64d9f4056c9b24a165",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "40db55e3_3b94b5b6",
