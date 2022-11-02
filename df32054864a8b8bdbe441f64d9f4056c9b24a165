@@ -141,6 +141,24 @@
       "parentUuid": "15ba36b0_60e00fc2",
       "revId": "df32054864a8b8bdbe441f64d9f4056c9b24a165",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "018239bd_42e62f50",
+        "filename": "libprocessgroup/profiles/cgroups.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1930620
+      },
+      "writtenOn": "2022-11-02T21:08:10Z",
+      "side": 1,
+      "message": "Hey Bart I tried this patch yesterday on cuttlefish and it worked fine. The previous testing I mentioned was on a Pixel where that cgroup_disable cmdline setting came from the Pixel tree somewhere. I did have to make additional modifications to the Pixel tree to get v2 memcg working, but I can\u0027t remember exactly where that was now. Regardless this change seems g2g for aosp.",
+      "parentUuid": "68d38289_df1a6184",
+      "revId": "df32054864a8b8bdbe441f64d9f4056c9b24a165",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ],
   "submitRequirementResults": [
