@@ -123,6 +123,24 @@
       "parentUuid": "8a292c64_c315a128",
       "revId": "df32054864a8b8bdbe441f64d9f4056c9b24a165",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68d38289_df1a6184",
+        "filename": "libprocessgroup/profiles/cgroups.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1869780
+      },
+      "writtenOn": "2022-11-02T20:59:14Z",
+      "side": 1,
+      "message": "Shouldn\u0027t `cgroup_disable\u003dmemory` be addressed by the `\"Optional\": true` in `cgroups.json`? Is more information available about what other cgroup functionality is broken with `cgroup_disable\u003dmemory`?",
+      "parentUuid": "15ba36b0_60e00fc2",
+      "revId": "df32054864a8b8bdbe441f64d9f4056c9b24a165",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ],
   "submitRequirementResults": [
