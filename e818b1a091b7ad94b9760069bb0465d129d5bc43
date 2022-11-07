@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8b87e32_859bd8c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 34
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1247518
+      },
+      "writtenOn": "2022-11-07T18:01:04Z",
+      "side": 1,
+      "message": "presubmit failures look unrelated:\nResizing \u0027system_a\u0027                                OKAY [  0.010s]\nSending sparse \u0027system_a\u0027 1/4 (262112 KB)          FAILED (Error reading sparse file)\nfastboot: error: Command failed\n [1B021FDF6005ZH unknown:unknown unknown]\n\tat",
+      "revId": "e818b1a091b7ad94b9760069bb0465d129d5bc43",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
