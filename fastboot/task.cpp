@@ -40,20 +40,21 @@ bool FlashTask::IsDynamicParitition(const ImageSource* source, const FlashTask* 
 }
 
 void FlashTask::Run() {
-    auto flash = [&](const std::string& partition) {
-        if (should_flash_in_userspace(fp_->source.get(), partition) && !is_userspace_fastboot() &&
-            !fp_->force_flash) {
-            die("The partition you are trying to flash is dynamic, and "
-                "should be flashed via fastbootd. Please run:\n"
-                "\n"
-                "    fastboot reboot fastboot\n"
-                "\n"
-                "And try again. If you are intentionally trying to "
-                "overwrite a fixed partition, use --force.");
-        }
-        do_flash(partition.c_str(), fname_.c_str(), apply_vbmeta_, fp_);
-    };
-    do_for_partitions(pname_, slot_, flash, true);
+    LOG(INFO) << fp_->force_flash;
+    // auto flash = [&](const std::string& partition) {
+    //     if (should_flash_in_userspace(fp_->source.get(), partition) && !is_userspace_fastboot() &&
+    //         !fp_->force_flash) {
+    //         die("The partition you are trying to flash is dynamic, and "
+    //             "should be flashed via fastbootd. Please run:\n"
+    //             "\n"
+    //             "    fastboot reboot fastboot\n"
+    //             "\n"
+    //             "And try again. If you are intentionally trying to "
+    //             "overwrite a fixed partition, use --force.");
+    //     }
+    //     do_flash(partition.c_str(), fname_.c_str(), apply_vbmeta_, fp_);
+    // };
+    // do_for_partitions(pname_, slot_, flash, true);
 }
 
 std::string FlashTask::ToString() const {
@@ -83,23 +84,24 @@ RebootTask::RebootTask(const FlashingPlan* fp, const std::string& reboot_target)
     : reboot_target_(reboot_target), fp_(fp){};
 
 void RebootTask::Run() {
-    if (reboot_target_ == "fastboot") {
-        if (!is_userspace_fastboot()) {
-            reboot_to_userspace_fastboot();
-            fp_->fb->WaitForDisconnect();
-        }
-    } else if (reboot_target_ == "recovery") {
-        fp_->fb->RebootTo("recovery");
-        fp_->fb->WaitForDisconnect();
-    } else if (reboot_target_ == "bootloader") {
-        fp_->fb->RebootTo("bootloader");
-        fp_->fb->WaitForDisconnect();
-    } else if (reboot_target_ == "") {
-        fp_->fb->Reboot();
-        fp_->fb->WaitForDisconnect();
-    } else {
-        syntax_error("unknown reboot target %s", reboot_target_.c_str());
-    }
+    LOG(INFO) << fp_->force_flash;
+    // if (reboot_target_ == "fastboot") {
+    //     if (!is_userspace_fastboot()) {
+    //         reboot_to_userspace_fastboot();
+    //         fp_->fb->WaitForDisconnect();
+    //     }
+    // } else if (reboot_target_ == "recovery") {
+    //     fp_->fb->RebootTo("recovery");
+    //     fp_->fb->WaitForDisconnect();
+    // } else if (reboot_target_ == "bootloader") {
+    //     fp_->fb->RebootTo("bootloader");
+    //     fp_->fb->WaitForDisconnect();
+    // } else if (reboot_target_ == "") {
+    //     fp_->fb->Reboot();
+    //     fp_->fb->WaitForDisconnect();
+    // } else {
+    //     syntax_error("unknown reboot target %s", reboot_target_.c_str());
+    // }
 }
 
 std::string RebootTask::ToString() const {
