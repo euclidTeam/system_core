@@ -11,6 +11,11 @@
       "File": "foreground/cpus"
     },
     {
+      "Name": "DisplayCPUs",
+      "Controller": "cpuset",
+      "File": "display/cpus"
+    },
+    {
       "Name": "HighCapacityWICPUs",
       "Controller": "cpuset",
       "File": "foreground_window/cpus"
@@ -590,6 +595,35 @@
     },
 
     {
+      "Name": "DisplayPolicy",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "cpuset",
+            "Path": "display"
+          }
+        },
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "cpu",
+            "Path": "display"
+          }
+        },
+        {
+          "Name": "SetAttribute",
+          "Params":
+          {
+            "Name": "UClampMin",
+            "Value": "100"
+          }
+        },
+      ]
+    },
+    {
       "Name": "LowMemoryUsage",
       "Actions": [
         {
@@ -723,6 +757,10 @@
     {
       "Name": "InputPolicy",
       "Profiles": [ "RealTimeInputScheduling", "MaxPerformance", "ProcessCapacityMax", "TimerSlackNormal" ]
+    },
+    {
+      "Name": "CPUSET_SP_DISPLAY",
+      "Profiles": [ "HighPerformance", "DisplayPolicy", "HighIoPriority", "TimerSlackNormal" ]
     }
   ]
 }

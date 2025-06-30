@@ -226,6 +226,20 @@ on init
     chmod 0664 /dev/stune/camera-daemon/tasks
     chmod 0664 /dev/stune/camera-daemon/cgroup.procs
 
+    # Display
+    mkdir /dev/cpuset/display
+    copy /dev/cpuset/cpus /dev/cpuset/display/cpus
+    copy /dev/cpuset/mems /dev/cpuset/display/mems
+    chown system system /dev/cpuset/display
+    chown system system /dev/cpuset/display/tasks
+    chmod 0775 /dev/cpuset/display/tasks
+    mkdir /dev/cpuctl/display
+    chown system system /dev/cpuctl/display
+    chown system system /dev/cpuctl/display/tasks
+    chown system system /dev/cpuctl/display/cgroup.procs
+    chmod 0664 /dev/cpuctl/display/tasks
+    chmod 0664 /dev/cpuctl/display/cgroup.procs
+
     # Create an stune group for NNAPI HAL processes
     mkdir /dev/stune/nnapi-hal
     chown system system /dev/stune/nnapi-hal
@@ -1433,6 +1447,7 @@ on property:persist.sys.euclid_boot_completed=*
     write /dev/cpuset/restricted/cpus ${persist.sys.euclid_cpu_fg:-0-7}
     write /dev/cpuset/system-background/cpus ${persist.sys.euclid_cpu_bg:-0-2}
     write /dev/cpuset/background/cpus ${persist.sys.euclid_cpu_bg:-0-2}
+    write /dev/cpuset/display/cpus ${persist.sys.euclid_cpu_display:-0-5}
 
 on boot 
     write /proc/sys/vm/extfrag_threshold 750
