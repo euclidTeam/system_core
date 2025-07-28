@@ -1217,8 +1217,8 @@ on boot
     # to avoid power consumption when system becomes mostly idle. Be careful
     # to make it too large, since it may bring userdata loss, if they
     # are not aware of using fsync()/sync() to prepare sudden power-cut.
-    write /dev/sys/fs/by-name/userdata/cp_interval 200
-    write /dev/sys/fs/by-name/userdata/gc_urgent_sleep_time 50
+    write /dev/sys/fs/by-name/userdata/cp_interval 6000
+    write /dev/sys/fs/by-name/userdata/gc_urgent_sleep_time 200
     write /dev/sys/fs/by-name/userdata/iostat_period_ms 1000
     write /dev/sys/fs/by-name/userdata/iostat_enable 1
 
@@ -1423,7 +1423,19 @@ on property:sys.snapshotctl.map=requested
 on property:sys.snapshotctl.unmap=requested
     exec - root root system -- /system/bin/snapshotctl unmap
     setprop sys.snapshotctl.unmap "finished"
-    
+
+on boot 
+    write /proc/sys/vm/extfrag_threshold 750
+    write /proc/sys/vm/page_lock_unfairness 1
+    write /sys/kernel/mm/transparent_hugepage/enabled "madvise"
+    write /sys/kernel/mm/transparent_hugepage/khugepaged/defrag 0
+    write /sys/kernel/mm/transparent_hugepage/khugepaged/pages_to_scan 512
+    write /sys/kernel/mm/transparent_hugepage/shmem_enabled "advise"
+    write /sys/kernel/mm/transparent_hugepage/defrag "never"
+    write /proc/sys/vm/dirty_expire_centisecs 3000
+    write /proc/sys/vm/dirty_writeback_centisecs 3000
+    write /proc/sys/kernel/sched_rr_timeslice_ms 1
+
 on property:sys.boot_completed=1
     # write initial cpuset
     write /dev/cpuset/top-app/cpus ${persist.sys.euclid_cpu_unlimit_ui:-0-7}
