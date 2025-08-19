@@ -1423,6 +1423,16 @@ on property:sys.snapshotctl.map=requested
 on property:sys.snapshotctl.unmap=requested
     exec - root root system -- /system/bin/snapshotctl unmap
     setprop sys.snapshotctl.unmap "finished"
+    
+on property:sys.boot_completed=1
+    # write initial cpuset
+    write /dev/cpuset/top-app/cpus ${persist.sys.euclid_cpu_unlimit_ui:-0-7}
+    write /dev/cpuset/camera-daemon/cpus ${persist.sys.euclid_cpu_unlimit_ui:-0-7}
+    write /dev/cpuset/foreground/cpus ${persist.sys.euclid_cpu_fg:-0-7}
+    write /dev/cpuset/foreground_window/cpus ${persist.sys.euclid_cpu_fg:-0-7}
+    write /dev/cpuset/restricted/cpus ${persist.sys.euclid_cpu_fg:-0-7}
+    write /dev/cpuset/system-background/cpus ${persist.sys.euclid_cpu_bg:-0-2}
+    write /dev/cpuset/background/cpus ${persist.sys.euclid_cpu_bg:-0-2}
 
 on boot 
     write /proc/sys/vm/extfrag_threshold 750
@@ -1435,14 +1445,3 @@ on boot
     write /proc/sys/vm/dirty_expire_centisecs 3000
     write /proc/sys/vm/dirty_writeback_centisecs 3000
     write /proc/sys/kernel/sched_rr_timeslice_ms 1
-
-on property:sys.boot_completed=1
-    # write initial cpuset
-    write /dev/cpuset/top-app/cpus ${persist.sys.euclid_cpu_unlimit_ui:-0-7}
-    write /dev/cpuset/camera-daemon/cpus ${persist.sys.euclid_cpu_unlimit_ui:-0-7}
-    write /dev/cpuset/foreground/cpus ${persist.sys.euclid_cpu_fg:-0-5}
-    write /dev/cpuset/foreground_window/cpus ${persist.sys.euclid_cpu_fg:-0-5}
-    write /dev/cpuset/dex2oat/cpus ${persist.sys.euclid_cpu_bg:-0-2}
-    write /dev/cpuset/restricted/cpus ${persist.sys.euclid_cpu_bg:-0-2}
-    write /dev/cpuset/system-background/cpus ${persist.sys.euclid_cpu_bg:-0-2}
-    write /dev/cpuset/background/cpus ${persist.sys.euclid_cpu_bg:-0-2}
