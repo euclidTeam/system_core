@@ -1424,7 +1424,7 @@ on property:sys.snapshotctl.unmap=requested
     exec - root root system -- /system/bin/snapshotctl unmap
     setprop sys.snapshotctl.unmap "finished"
     
-on property:sys.boot_completed=1
+on property:persist.sys.euclid_boot_completed=*
     # write initial cpuset
     write /dev/cpuset/top-app/cpus ${persist.sys.euclid_cpu_unlimit_ui:-0-7}
     write /dev/cpuset/camera-daemon/cpus ${persist.sys.euclid_cpu_unlimit_ui:-0-7}
