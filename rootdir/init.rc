@@ -240,6 +240,19 @@ on init
     chmod 0664 /dev/cpuctl/display/tasks
     chmod 0664 /dev/cpuctl/display/cgroup.procs
 
+    mkdir /dev/cpuctl/restricted
+    chown system system /dev/cpuctl/restricted
+    chown system system /dev/cpuctl/restricted/tasks
+    chown system system /dev/cpuctl/restricted/cgroup.procs
+    chown system system /dev/cpuctl/restricted/cpu.uclamp.latency_sensitive
+    chown system system /dev/cpuctl/restricted/cpu.uclamp.max
+    chown system system /dev/cpuctl/restricted/cpu.uclamp.min
+    chmod 0664 /dev/cpuctl/restricted/tasks
+    chmod 0664 /dev/cpuctl/restricted/cgroup.procs
+    chmod 0664 /dev/cpuctl/restricted/cpu.uclamp.latency_sensitive
+    chmod 0664 /dev/cpuctl/restricted/cpu.uclamp.max
+    chmod 0664 /dev/cpuctl/restricted/cpu.uclamp.min
+
     # Create an stune group for NNAPI HAL processes
     mkdir /dev/stune/nnapi-hal
     chown system system /dev/stune/nnapi-hal
