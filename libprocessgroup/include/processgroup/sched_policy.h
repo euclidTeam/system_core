@@ -50,6 +50,7 @@ typedef enum {
     SP_RESTRICTED = 7,
     SP_FOREGROUND_WINDOW = 8,
     SP_DISPLAY = 9,
+    SP_NT_FOREGROUND = 10,
     SP_CNT,
     SP_MAX = SP_CNT - 1,
     SP_SYSTEM_DEFAULT = SP_FOREGROUND,

@@ -210,6 +210,13 @@ on init
     write /dev/cpuctl/nnapi-hal/cpu.uclamp.min 1
     write /dev/cpuctl/nnapi-hal/cpu.uclamp.latency_sensitive 1
 
+    mkdir /dev/cpuctl/nt_foreground
+    chown system system /dev/cpuctl/nt_foreground
+    chown system system /dev/cpuctl/nt_foreground/tasks
+    chown system system /dev/cpuctl/nt_foreground/cgroup.procs
+    chmod 0664 /dev/cpuctl/nt_foreground/tasks
+    chmod 0664 /dev/cpuctl/nt_foreground/cgroup.procs
+
     # Create a cpu group for camera daemon processes
     mkdir /dev/cpuctl/camera-daemon
     chown system system /dev/cpuctl/camera-daemon
@@ -442,6 +449,14 @@ on init
     chown system system /dev/cpuset/top-app/cgroup.procs
     chown system system /dev/cpuset/restricted/cgroup.procs
     chown system system /dev/cpuset/camera-daemon/cgroup.procs
+
+    mkdir /dev/cpuset/nt_foreground
+    copy /dev/cpuset/cpus /dev/cpuset/nt_foreground/cpus
+    copy /dev/cpuset/mems /dev/cpuset/nt_foreground/mems
+    chown system system /dev/cpuset/nt_foreground
+    chown system system /dev/cpuset/nt_foreground/tasks
+    chown system system /dev/cpuset/nt_foreground/cgroup.procs
+    chown system system /dev/cpuset/nt_foreground/cpus
 
     # set system-background to 0775 so SurfaceFlinger can touch it
     chmod 0775 /dev/cpuset/system-background
@@ -1449,9 +1464,10 @@ on property:persist.sys.euclid_boot_completed=*
     # write initial cpuset
     write /dev/cpuset/top-app/cpus ${persist.sys.euclid_cpu_unlimit_ui:-0-7}
     write /dev/cpuset/camera-daemon/cpus ${persist.sys.euclid_cpu_unlimit_ui:-0-7}
-    write /dev/cpuset/foreground/cpus ${persist.sys.euclid_cpu_fg:-0-7}
-    write /dev/cpuset/foreground_window/cpus ${persist.sys.euclid_cpu_fg:-0-7}
-    write /dev/cpuset/restricted/cpus ${persist.sys.euclid_cpu_fg:-0-7}
+    write /dev/cpuset/foreground/cpus ${persist.sys.euclid_cpu_fg:-0-5}
+    write /dev/cpuset/foreground_window/cpus ${persist.sys.euclid_cpu_fg:-0-5}
+    write /dev/cpuset/nt_foreground/cpus ${persist.sys.euclid_cpu_unlimit_ui:-0-7}
+    write /dev/cpuset/restricted/cpus ${persist.sys.euclid_cpu_unlimit_ui:-0-7}
     write /dev/cpuset/system-background/cpus ${persist.sys.euclid_cpu_bg:-0-2}
     write /dev/cpuset/background/cpus ${persist.sys.euclid_cpu_bg:-0-2}
     write /dev/cpuset/display/cpus ${persist.sys.euclid_cpu_display:-0-5}
