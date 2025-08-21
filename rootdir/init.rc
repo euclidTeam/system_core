@@ -239,13 +239,24 @@ on init
     copy /dev/cpuset/mems /dev/cpuset/display/mems
     chown system system /dev/cpuset/display
     chown system system /dev/cpuset/display/tasks
+    chown system system /dev/cpuset/display/cgroup.procs
+    chown system system /dev/cpuset/display/cpus
+    chmod 0775 /dev/cpuset/display
+    chmod 0775 /dev/cpuset/display/cgroup.procs
+    chmod 0775 /dev/cpuset/display/cpus
     chmod 0775 /dev/cpuset/display/tasks
     mkdir /dev/cpuctl/display
     chown system system /dev/cpuctl/display
     chown system system /dev/cpuctl/display/tasks
     chown system system /dev/cpuctl/display/cgroup.procs
+    chown system system /dev/cpuctl/display/cpu.uclamp.latency_sensitive
+    chown system system /dev/cpuctl/display/cpu.uclamp.max
+    chown system system /dev/cpuctl/display/cpu.uclamp.min
     chmod 0664 /dev/cpuctl/display/tasks
     chmod 0664 /dev/cpuctl/display/cgroup.procs
+    chmod 0664 /dev/cpuctl/display/cpu.uclamp.latency_sensitive
+    chmod 0664 /dev/cpuctl/display/cpu.uclamp.max
+    chmod 0664 /dev/cpuctl/display/cpu.uclamp.min
 
     mkdir /dev/cpuctl/restricted
     chown system system /dev/cpuctl/restricted
@@ -466,7 +477,6 @@ on init
     chmod 0775 /dev/cpuset/restricted
     chmod 0775 /dev/cpuset/background
     chmod 0775 /dev/cpuset/foreground_window
-    chmod 0775 /dev/cpuset/display
 
     # Boost framework
     chmod 0775 /dev/cpuset/top-app/cpus
