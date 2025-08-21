@@ -621,6 +621,28 @@
     },
 
     {
+      "Name": "AudioPolicy",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "cpuset",
+            "Path": "foreground"
+          }
+        },
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "cpu",
+            "Path": "foreground"
+          }
+        },
+      ]
+    },
+
+    {
       "Name": "DisplayPolicy",
       "Actions": [
         {
