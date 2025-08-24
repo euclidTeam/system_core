@@ -661,14 +661,6 @@
             "Path": "display"
           }
         },
-        {
-          "Name": "SetAttribute",
-          "Params":
-          {
-            "Name": "UClampMin",
-            "Value": "100"
-          }
-        },
       ]
     },
     {
