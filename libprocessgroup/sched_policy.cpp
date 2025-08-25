@@ -138,7 +138,6 @@ int set_sched_policy(pid_t tid, SchedPolicy policy) {
         case SP_AUDIO_APP:
         case SP_AUDIO_SYS:
         case SP_DISPLAY:
-        case SP_NT_FOREGROUND:
             return SetTaskProfiles(tid, {"SCHED_SP_FOREGROUND"}, true) ? 0 : -1;
         case SP_TOP_APP:
             return SetTaskProfiles(tid, {"SCHED_SP_TOP_APP"}, true) ? 0 : -1;
@@ -148,6 +147,8 @@ int set_sched_policy(pid_t tid, SchedPolicy policy) {
             return SetTaskProfiles(tid, {"SCHED_SP_RT_APP"}, true) ? 0 : -1;
         case SP_FOREGROUND_WINDOW:
             return SetTaskProfiles(tid, {"SCHED_SP_FOREGROUND_WINDOW"}, true) ? 0 : -1;
+        case SP_NT_FOREGROUND:
+            return SetTaskProfiles(tid, {"CPUSET_SP_NT_FOREGROUND"}, true) ? 0 : -1;
         default:
             return SetTaskProfiles(tid, {"SCHED_SP_DEFAULT"}, true) ? 0 : -1;
     }
@@ -202,6 +203,8 @@ static int get_sched_policy_from_group(const std::string& group, SchedPolicy* po
         *policy = SP_FOREGROUND_WINDOW;
     } else if (group == "display") {
         *policy = SP_FOREGROUND;
+    } else if (group == "nt_foreground") {
+        *policy = SP_NT_FOREGROUND;
     } else {
         errno = ERANGE;
         return -1;
@@ -303,7 +306,7 @@ const char* get_sched_policy_profile_name(SchedPolicy policy) {
             "SCHED_SP_DEFAULT",      "SCHED_SP_BACKGROUND", "SCHED_SP_FOREGROUND",
             "SCHED_SP_SYSTEM",       "SCHED_SP_FOREGROUND", "SCHED_SP_FOREGROUND",
             "SCHED_SP_TOP_APP",      "SCHED_SP_RT_APP",     "SCHED_SP_DEFAULT",
-            "SCHED_SP_FOREGROUND_WINDOW", "SCHED_SP_FOREGROUND", "SCHED_SP_FOREGROUND"};
+            "SCHED_SP_FOREGROUND_WINDOW", "SCHED_SP_FOREGROUND", "SP_NT_FOREGROUND"};
     if (policy < SP_DEFAULT || policy >= SP_CNT) {
         return nullptr;
     }
