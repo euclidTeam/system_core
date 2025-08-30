@@ -1482,14 +1482,4 @@ on property:persist.sys.euclid_boot_completed=*
     write /dev/cpuset/background/cpus ${persist.sys.euclid_cpu_bg:-0-2}
     write /dev/cpuset/display/cpus ${persist.sys.euclid_cpu_display:-0-5}
 
-on boot 
-    write /proc/sys/vm/extfrag_threshold 750
-    write /proc/sys/vm/page_lock_unfairness 1
-    write /sys/kernel/mm/transparent_hugepage/enabled "madvise"
-    write /sys/kernel/mm/transparent_hugepage/khugepaged/defrag 0
-    write /sys/kernel/mm/transparent_hugepage/khugepaged/pages_to_scan 512
-    write /sys/kernel/mm/transparent_hugepage/shmem_enabled "advise"
-    write /sys/kernel/mm/transparent_hugepage/defrag "never"
-    write /proc/sys/vm/dirty_expire_centisecs 3000
-    write /proc/sys/vm/dirty_writeback_centisecs 3000
     write /proc/sys/kernel/sched_rr_timeslice_ms 1
