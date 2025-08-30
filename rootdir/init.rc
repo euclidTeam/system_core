@@ -1478,7 +1478,7 @@ on property:persist.sys.euclid_boot_completed=*
     write /dev/cpuset/foreground_window/cpus ${persist.sys.euclid_cpu_fg:-0-5}
     write /dev/cpuset/nt_foreground/cpus ${persist.sys.euclid_cpu_unlimit_ui:-0-7}
     write /dev/cpuset/restricted/cpus ${persist.sys.euclid_cpu_unlimit_ui:-0-7}
-    write /dev/cpuset/system-background/cpus ${persist.sys.euclid_cpu_bg:-0-2}
+    write /dev/cpuset/system-background/cpus ${persist.sys.euclid_cpu_sys_bg:-0-3}
     write /dev/cpuset/background/cpus ${persist.sys.euclid_cpu_bg:-0-2}
     write /dev/cpuset/display/cpus ${persist.sys.euclid_cpu_display:-0-5}
 
