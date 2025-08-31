@@ -233,6 +233,15 @@ on init
     chmod 0664 /dev/stune/camera-daemon/tasks
     chmod 0664 /dev/stune/camera-daemon/cgroup.procs
 
+    # create a cpuset for dex2oat processes
+    mkdir /dev/cpuset/dex2oat
+    copy /dev/cpuset/cpus /dev/cpuset/dex2oat/cpus
+    copy /dev/cpuset/mems /dev/cpuset/dex2oat/mems
+    chown system system /dev/cpuset/dex2oat
+    chown system system /dev/cpuset/dex2oat/tasks
+    chown system system /dev/cpuset/dex2oat/cgroup.procs
+    chown system system /dev/cpuset/dex2oat/cpus
+
     # Display
     mkdir /dev/cpuset/display
     copy /dev/cpuset/cpus /dev/cpuset/display/cpus

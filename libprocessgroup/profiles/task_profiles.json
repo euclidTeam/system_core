@@ -274,6 +274,14 @@
             "Controller": "cpu",
             "Path": "dex2oat"
           }
+        },
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "cpuset",
+            "Path": "dex2oat"
+          }
         }
       ]
     },
