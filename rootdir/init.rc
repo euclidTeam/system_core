@@ -190,7 +190,7 @@ on init
     chmod 0664 /dev/cpuctl/system/tasks
     chmod 0664 /dev/cpuctl/system-background/tasks
     chmod 0664 /dev/cpuctl/dex2oat/tasks
-    chmod 0664 /dev/cpuctl/cgroup.procs
+    chmod 0755 /dev/cpuctl/cgroup.procs
     chmod 0664 /dev/cpuctl/foreground/cgroup.procs
     chmod 0664 /dev/cpuctl/foreground_window/cgroup.procs
     chmod 0664 /dev/cpuctl/background/cgroup.procs
